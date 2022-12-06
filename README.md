@@ -55,7 +55,7 @@ MACHINE = "genericx86-64"
 DL_DIR = "${TOPDIR}/../downloads"
 
 # systemd
-DISTRO_FEATURES_append = " systemd pam"
+DISTRO_FEATURES:append = " systemd pam"
 VIRTUAL-RUNTIME_init_manager = "systemd"
 DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
 VIRTUAL-RUNTIME_initscripts = ""
@@ -64,9 +64,9 @@ VIRTUAL-RUNTIME_initscripts = ""
 #SIGNING_MODEL = "user"
 
 INITRAMFS_IMAGE = "secure-core-image-initramfs"
-DISTRO_FEATURES_append = " efi-secure-boot"
+DISTRO_FEATURES:append = " efi-secure-boot"
 
-IMAGE_EFI_BOOT_FILES_append = " \
+IMAGE_EFI_BOOT_FILES:append = " \
         ${KERNEL_IMAGETYPE}.p7b \
         Hash2DxeCrypto.efi;EFI/BOOT/Hash2DxeCrypto.efi \
         LockDown.efi;EFI/BOOT/LockDown.efi \
